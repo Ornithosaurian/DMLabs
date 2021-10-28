@@ -11,17 +11,4 @@ public class XOR implements LogicalOperations {
         }
         return result;
     }
-
-    public static void main(String[] args) {
-        int[] a = {1, 0, 1, 1, 1, 1};
-        int[] b = {1, 0, 0, 0, 0, 0};
-        ContextLogicalOperations contextOperations = new ContextLogicalOperations();
-        contextOperations.setLogicalOperations(new XOR());
-        System.out.println("Відсортований масив: ");
-        for (int num : contextOperations.executeLogicalOperations(a, b)) {
-            System.out.print(num + " ");
-        }
-        System.out.println("\n");
-    }
-
 }
