@@ -3,7 +3,7 @@ package Service.Operations;
 import java.util.Arrays;
 
 public class Unification implements Operations {
-    public int[] c;
+    private int[] c;
 
     public int[] getC() {
         return c;

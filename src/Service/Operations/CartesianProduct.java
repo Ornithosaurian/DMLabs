@@ -1,7 +1,7 @@
 package Service.Operations;
 
 public class CartesianProduct implements Operations {
-    public String[][] c;
+    private String[][] c;
 
     CartesianProduct(int[] a, int[] b) {
         c = new String[a.length][b.length];

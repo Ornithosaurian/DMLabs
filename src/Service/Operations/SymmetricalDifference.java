@@ -1,7 +1,7 @@
 package Service.Operations;
 
 public class SymmetricalDifference implements Operations {
-    public int[] c;
+    private int[] c;
 
     public int[] getC() {
         return c;
