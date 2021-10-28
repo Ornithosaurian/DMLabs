@@ -3,12 +3,7 @@ package Service.LogicalOperations;
 public class XOR implements LogicalOperations {
     @Override
     public byte[] doLogicalOperations(int[] a, int[] b) {
-        int k = 0;
-        if (a.length > b.length) {
-            k = a.length;
-        } else {
-            k = b.length;
-        }
+        int k = Math.max(a.length, b.length);
         byte[] result = new byte[k];
         int i = 0;
         for (int c : a) {
