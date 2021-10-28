@@ -1,17 +1,28 @@
 package Service.Operations;
 
-public class SymmetricalDifference implements Operations{
+public class SymmetricalDifference implements Operations {
+    public int[] c;
+
+    public int[] getC() {
+        return c;
+    }
 
     @Override
-    public int[] doOperations(int[] a, int[] b) {
+    public void doOperations(int[] a, int[] b) {
         ContextOperations intersection = new ContextOperations();
-        intersection.setOperations(new Intersection());
-        int[] c = intersection.executeOperations(a,b);
+        Intersection intersection1 = new Intersection();
+        intersection.setOperations(intersection1);
+        intersection.executeOperations(a, b);
+        int[] g = intersection1.getC();
         ContextOperations unification = new ContextOperations();
-        unification.setOperations(new Unification());
-        int[] ab = unification.executeOperations(a,b);
+        Unification unification1 = new Unification();
+        unification.setOperations(unification1);
+        unification.executeOperations(a, b);
+        int[] ab = unification1.getC();
         ContextOperations otherness = new ContextOperations();
-        otherness.setOperations(new Otherness());
-        return otherness.executeOperations(ab,c);
+        Otherness otherness1 = new Otherness();
+        otherness.setOperations(otherness1);
+        otherness.executeOperations(ab, g);
+        c = otherness1.getC();
     }
 }

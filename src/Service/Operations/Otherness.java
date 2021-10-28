@@ -3,9 +3,14 @@ package Service.Operations;
 import java.util.Arrays;
 
 public class Otherness implements Operations {
+    public int[] c;
+
+    public int[] getC() {
+        return c;
+    }
 
     @Override
-    public int[] doOperations(int[] a, int[] b) {
+    public void doOperations(int[] a, int[] b) {
         Arrays.sort(a);
         Arrays.sort(b);
         int n = 0;
@@ -18,9 +23,9 @@ public class Otherness implements Operations {
             }
         }
         if (n == 0) {
-            return new int[0];
+            c = new int[0];
         }
-        int[] res = new int[a.length - n];
+        c = new int[a.length - n];
         n = 0;
         int k = 0;
         for (int i : a) {
@@ -30,12 +35,10 @@ public class Otherness implements Operations {
                 }
             }
             if (k == b.length) {
-                res[n] = i;
+                c[n] = i;
                 n++;
             }
             k = 0;
         }
-
-        return res;
     }
 }
