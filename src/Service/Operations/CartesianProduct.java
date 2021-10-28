@@ -3,7 +3,7 @@ package Service.Operations;
 public class CartesianProduct implements Operations {
     private String[][] c;
 
-    CartesianProduct(int[] a, int[] b) {
+    public CartesianProduct(int[] a, int[] b) {
         c = new String[a.length][b.length];
     }
 
