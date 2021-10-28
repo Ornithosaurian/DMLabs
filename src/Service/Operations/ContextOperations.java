@@ -7,7 +7,7 @@ public class ContextOperations {
         this.operations = operations;
     }
 
-    public void executeOperations(int[] arr){
-        operations.doOperations(arr);
+    public void executeOperations(int[] a, int[] b) {
+        operations.doOperations(a, b);
     }
 }
