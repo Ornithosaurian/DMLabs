@@ -1,4 +1,4 @@
-package Service.Tools;
+package Service.Utils;
 
 public class PrintArray {
     public void printIntArrayInt(int[] arr) {
