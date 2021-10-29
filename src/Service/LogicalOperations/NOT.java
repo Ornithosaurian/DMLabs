@@ -2,12 +2,16 @@ package Service.LogicalOperations;
 
 
 public class NOT implements LogicalOperations {
-    public int[] doLogicalOperations(int[] a, int[] b, int[] u) {
+    public int[] doLogicalOperations(int[] a, int[] b) {
         int[] resultNOT = new int[a.length];
-        int i = 0;
-        for (int temp : a) {
-            resultNOT[i] = (byte) (~temp);
+        for(int i = 0; i < a.length; i++){
+            if (a[i]==b[i])
+                resultNOT[i] = 0;
+            else{
+                resultNOT[i] = 1;
+            }
         }
+            
         return resultNOT;
     }
 }
