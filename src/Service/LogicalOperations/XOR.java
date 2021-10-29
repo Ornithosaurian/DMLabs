@@ -1,14 +1,23 @@
 package Service.LogicalOperations;
 
+import Service.Tools.Mkbitline;
+import Service.Tools.Frombitlinetonumbers;
+
 public class XOR implements LogicalOperations {
-    @Override
     public byte[] doLogicalOperations(int[] a, int[] b) {
+        Mkbitline mkbitline = new Mkbitline();
+        mkbitline.mkbitline(abit, bbit);
         int k = Math.max(a.length, b.length);
-        byte[] result = new byte[k];
+        byte[] resultXOR = new byte[k];
         int i = 0;
-        for (int c : a) {
-            result[i] = (byte) (c ^ b[i++]);
+        if (b.length < a.length) {
+            throw new IllegalArgumentException("Другий масив повинен бути >= першому");
         }
-        return result;
+        for (int temp : abit) {
+            resultXOR[i] = (byte) (temp ^ bbit[i++]);
+        }
+        Frombitlinetonumbers frombitlinetonumbers = new Frombitlinetonumbers();
+        frombitlinetonumbers.fbtlntnumb(a, b);
+        return resultXOR;
     }
 }
