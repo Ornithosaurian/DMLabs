@@ -135,13 +135,15 @@ public class Main {
                         }
                         case 9 -> {
                             contextLogicalOperations.setLogicalOperations(not);
-                            System.out.println("Над якою множиною бажаєте виконати операцію а чи в?\n");
+                            System.out.println("Над якою множиною бажаєте виконати операцію?\n");
                             line = consoleO.nextLine();
                             if (line.equalsIgnoreCase("a")) {
                                 printArray.printIntArrayInt(contextLogicalOperations.executeLogicalOperations(a, b, u));
                             } else if (line.equalsIgnoreCase("b")) {
                                 printArray.printIntArrayInt(contextLogicalOperations.executeLogicalOperations(b, a, u));
-                            } else {
+                            }  else if (line.equalsIgnoreCase("u")) {
+                                printArray.printIntArrayInt(contextLogicalOperations.executeLogicalOperations(u, a, u));
+                            }else {
                                 System.out.println("Упс.Щось пішло не так\n");
                                 continue;
                             }
