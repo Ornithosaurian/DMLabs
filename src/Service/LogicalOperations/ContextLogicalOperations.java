@@ -7,7 +7,7 @@ public class ContextLogicalOperations {
         this.logicalOperations = logicalOperations;
     }
 
-    public byte[] executeLogicalOperations(int[] a, int[] b) {
-        return logicalOperations.doLogicalOperations(a, b);
+    public int[] executeLogicalOperations(int[] a, int[] b, int[] u) {
+        return logicalOperations.doLogicalOperations(a, b, u);
     }
 }

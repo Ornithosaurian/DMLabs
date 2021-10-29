@@ -3,21 +3,17 @@ package Service.LogicalOperations;
 import Service.Tools.Frombitlinetonumbers;
 import Service.Tools.Mkbitline;
 
-public class OR implements LogicalOperations{
-    public byte[] doLogicalOperations(int[] a, int[] b) {
+public class OR implements LogicalOperations {
+    public int[] doLogicalOperations(int[] a, int[] b, int[] u) {
         Mkbitline mkbitline = new Mkbitline();
-        mkbitline.mkbitline(abit, bbit);
-        int k = Math.max(a.length, b.length);
-        byte[] resultOR = new byte[k];
+        int[] abit = mkbitline.mkbitline(a, u);
+        int[] bbit = mkbitline.mkbitline(b, u);
+        int[] resultOR = new int[u.length];
         int i = 0;
-        if (b.length < a.length) {
-            throw new IllegalArgumentException("Другий масив повинен бути >= першому");
-        }
         for (int temp : abit) {
             resultOR[i] = (byte) (temp | bbit[i++]);
         }
         Frombitlinetonumbers frombitlinetonumbers = new Frombitlinetonumbers();
-        frombitlinetonumbers.fbtlntnumb(a, b);
-        return resultOR;
+        return frombitlinetonumbers.fbtlntnumb(resultOR, u);
     }
 }

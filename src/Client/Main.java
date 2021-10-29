@@ -1,6 +1,8 @@
 package Client;
 
+import Service.LogicalOperations.*;
 import Service.Operations.*;
+import Service.Tools.Check;
 import Service.Utils.PrintArray;
 
 import java.util.InputMismatchException;
@@ -15,6 +17,12 @@ public class Main {
         Intersection intersection = new Intersection();
         Otherness otherness = new Otherness();
         SymmetricalDifference symmetricalDifference = new SymmetricalDifference();
+        ContextLogicalOperations contextLogicalOperations = new ContextLogicalOperations();
+        XOR xor = new XOR();
+        OR or = new OR();
+        NOT not = new NOT();
+        AND and = new AND();
+        Check check = new Check();
         Scanner consoleA = new Scanner(System.in);
         Scanner consoleB = new Scanner(System.in);
         Scanner consoleO = new Scanner(System.in);
@@ -65,7 +73,12 @@ public class Main {
                     System.out.println("3:різниця");
                     System.out.println("4:доповнення");
                     System.out.println("5:симетрична різниця");
-                    System.out.println("6:декартовий добуток\n");
+                    System.out.println("6:декартовий добуток");
+                    System.out.println("7:XOR");
+                    System.out.println("8:OR");
+                    System.out.println("9:NOT");
+                    System.out.println("10:AND");
+                    System.out.println("11:Перевірити чи є множина підмножиною іншої\n");
                     line = consoleO.nextLine();
                     if (!(isItNum(line))) {
                         System.out.println("\nВи ввели не число!Спробуй ще раз.\n");
@@ -111,6 +124,100 @@ public class Main {
                             contextOperations.setOperations(cartesianProduct);
                             contextOperations.executeOperations(a, b);
                             printArray.printStringArrayArray(cartesianProduct.getC());
+                        }
+                        case 7 -> {
+                            contextLogicalOperations.setLogicalOperations(xor);
+                            printArray.printIntArrayInt(contextLogicalOperations.executeLogicalOperations(a, b, u));
+                        }
+                        case 8 -> {
+                            contextLogicalOperations.setLogicalOperations(or);
+                            printArray.printIntArrayInt(contextLogicalOperations.executeLogicalOperations(a, b, u));
+                        }
+                        case 9 -> {
+                            contextLogicalOperations.setLogicalOperations(not);
+                            System.out.println("Над якою множиною бажаєте виконати операцію а чи в?\n");
+                            line = consoleO.nextLine();
+                            if (line.equalsIgnoreCase("a")) {
+                                printArray.printIntArrayInt(contextLogicalOperations.executeLogicalOperations(a, b, u));
+                            } else if (line.equalsIgnoreCase("b")) {
+                                printArray.printIntArrayInt(contextLogicalOperations.executeLogicalOperations(b, a, u));
+                            } else {
+                                System.out.println("Упс.Щось пішло не так\n");
+                                continue;
+                            }
+                        }
+                        case 10 -> {
+                            contextLogicalOperations.setLogicalOperations(and);
+                            printArray.printIntArrayInt(contextLogicalOperations.executeLogicalOperations(a, b, u));
+                        }
+                        case 11 -> {
+                            System.out.println("Введіть множини через enter над якими хочете провести операції.\n");
+                            line = consoleO.nextLine();
+                            lineB = consoleA.nextLine();
+                            if (line.equalsIgnoreCase("a")) {
+                                if (lineB.equalsIgnoreCase("b")) {
+                                    if (check.twoArrsCheck(a, b)) {
+                                        System.out.println("True");
+                                    }
+                                    System.out.println("False");
+                                } else if (lineB.equalsIgnoreCase("u")) {
+                                    if (check.twoArrsCheck(a, u)) {
+                                        System.out.println("True");
+                                    }
+                                    System.out.println("False");
+                                } else if (lineB.equalsIgnoreCase("a")) {
+                                    if (check.twoArrsCheck(a, a)) {
+                                        System.out.println("True");
+                                    }
+                                    System.out.println("False");
+                                } else {
+                                    System.out.println("Упс.Щось пішло не так\n");
+                                    continue;
+                                }
+                            } else if (line.equalsIgnoreCase("b")) {
+                                if (lineB.equalsIgnoreCase("b")) {
+                                    if (check.twoArrsCheck(b, b)) {
+                                        System.out.println("True");
+                                    }
+                                    System.out.println("False");
+                                } else if (lineB.equalsIgnoreCase("u")) {
+                                    if (check.twoArrsCheck(b, u)) {
+                                        System.out.println("True");
+                                    }
+                                    System.out.println("False");
+                                } else if (lineB.equalsIgnoreCase("a")) {
+                                    if (check.twoArrsCheck(b, a)) {
+                                        System.out.println("True");
+                                    }
+                                    System.out.println("False");
+                                } else {
+                                    System.out.println("Упс.Щось пішло не так\n");
+                                    continue;
+                                }
+                            } else if (line.equalsIgnoreCase("u")) {
+                                if (lineB.equalsIgnoreCase("b")) {
+                                    if (check.twoArrsCheck(u, b)) {
+                                        System.out.println("True");
+                                    }
+                                    System.out.println("False");
+                                } else if (lineB.equalsIgnoreCase("u")) {
+                                    if (check.twoArrsCheck(u, u)) {
+                                        System.out.println("True");
+                                    }
+                                    System.out.println("False");
+                                } else if (lineB.equalsIgnoreCase("a")) {
+                                    if (check.twoArrsCheck(u, a)) {
+                                        System.out.println("True");
+                                    }
+                                    System.out.println("False");
+                                } else {
+                                    System.out.println("Упс.Щось пішло не так\n");
+                                    continue;
+                                }
+                            } else {
+                                System.out.println("Упс.Щось пішло не так\n");
+                                continue;
+                            }
                         }
                         default -> System.out.println("Немає такої операції\n");
                     }
