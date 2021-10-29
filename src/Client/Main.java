@@ -74,10 +74,10 @@ public class Main {
                     System.out.println("4:доповнення");
                     System.out.println("5:симетрична різниця");
                     System.out.println("6:декартовий добуток");
-                    System.out.println("7:XOR");
-                    System.out.println("8:OR");
-                    System.out.println("9:NOT");
-                    System.out.println("10:AND");
+                    System.out.println("7:бітова симетрична різниця");
+                    System.out.println("8:бітове об’єднання");
+                    System.out.println("9:бітове ні");
+                    System.out.println("10:бітовий перетин");
                     System.out.println("11:Перевірити чи є множина підмножиною іншої\n");
                     line = consoleO.nextLine();
                     if (!(isItNum(line))) {
@@ -97,8 +97,46 @@ public class Main {
                         }
                         case 3 -> {
                             contextOperations.setOperations(otherness);
-                            contextOperations.executeOperations(a, b);
-                            printArray.printIntArrayInt(otherness.getC());
+                            System.out.println("Між якими множинами ви бажаєте зробити різницю?\n");
+                            line = consoleO.nextLine();
+                            lineB = consoleA.nextLine();
+                            if (line.equalsIgnoreCase("a")) {
+                                if (lineB.equalsIgnoreCase("b")) {
+                                    contextOperations.executeOperations(a, b);
+                                    printArray.printIntArrayInt(otherness.getC());
+                                } else if (lineB.equalsIgnoreCase("u")) {
+                                    contextOperations.executeOperations(a, u);
+                                    printArray.printIntArrayInt(otherness.getC());
+                                }else {
+                                    System.out.println("Упс.Щось пішло не так\n");
+                                    continue;
+                                }
+                            } else if (line.equalsIgnoreCase("b")) {
+                                if (lineB.equalsIgnoreCase("a")) {
+                                    contextOperations.executeOperations(b, a);
+                                    printArray.printIntArrayInt(otherness.getC());
+                                } else if (lineB.equalsIgnoreCase("u")) {
+                                    contextOperations.executeOperations(b,u);
+                                    printArray.printIntArrayInt(otherness.getC());
+                                }else {
+                                    System.out.println("Упс.Щось пішло не так\n");
+                                    continue;
+                                }
+                            } else if (line.equalsIgnoreCase("u")) {
+                                if (lineB.equalsIgnoreCase("b")) {
+                                    contextOperations.executeOperations(u,b);
+                                    printArray.printIntArrayInt(otherness.getC());
+                                } else if (lineB.equalsIgnoreCase("a")) {
+                                    contextOperations.executeOperations(u,a);
+                                    printArray.printIntArrayInt(otherness.getC());
+                                }else {
+                                    System.out.println("Упс.Щось пішло не так\n");
+                                    continue;
+                                }
+                            } else {
+                                System.out.println("Упс.Щось пішло не так\n");
+                                continue;
+                            }
                         }
                         case 4 -> {
                             contextOperations.setOperations(otherness);
