@@ -11,11 +11,10 @@ public class AND implements LogicalOperations {
         int[] bbit = mkbitline.mkbitline(b, u);
         int[] resultAND = new int[u.length];
         int i = 0;
-        for (int temp : a) {
-            resultAND[i] = (byte) (temp & b[i++]);
+        for (int temp : abit) {
+            resultAND[i] = (byte) (temp & bbit[i++]);
         }
         Frombitlinetonumbers frombitlinetonumbers = new Frombitlinetonumbers();
         return frombitlinetonumbers.fbtlntnumb(resultAND, u);
-
     }
 }
