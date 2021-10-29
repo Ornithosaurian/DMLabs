@@ -1,7 +1,7 @@
 package Service.LogicalOperations;
 
 
-public class NOT { /*//implements LogicalOperations {*/
+public class NOT implements LogicalOperations { /*//implements LogicalOperations {*/
 //            public static void main(String[] args) {
 //                        int[] arr;
 //
