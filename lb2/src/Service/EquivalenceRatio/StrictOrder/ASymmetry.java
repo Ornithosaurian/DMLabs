@@ -1,8 +1,8 @@
-package Service.EquivalenceRatio.NotStrictOrder;
+package Service.EquivalenceRatio.StrictOrder;
 
-public class Symmetry implements EquivalenceRatio {
+public class ASymmetry implements StrictOrder {
     @Override
-    public boolean doEquivalence(int[][] matrix) {
+    public boolean doAntiEquivalence(int[][] matrix) {
         if (matrix.length == 0 || matrix[0].length == 0 || matrix[0].length != matrix.length) {
             throw new IllegalArgumentException();
         }
@@ -11,11 +11,12 @@ public class Symmetry implements EquivalenceRatio {
             for (int p = 0; p < line; p++) {
                 if (matrix[l][p] == 1) {
                     if (matrix[l][p] != matrix[p][l]) {
-                        return false;
+                        return true;
                     }
                 }
             }
         }
-        return true;
+        return false;
     }
 }
+
