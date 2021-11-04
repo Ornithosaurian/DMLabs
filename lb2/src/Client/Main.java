@@ -7,7 +7,6 @@ import Service.EquivalenceRatio.NotStrictOrder.Transitivity;
 import Service.EquivalenceRatio.StrictOrder.ASymmetry;
 import Service.EquivalenceRatio.StrictOrder.AntiReflexive;
 import Service.EquivalenceRatio.StrictOrder.ContextStrictOrder;
-import Service.EquivalenceRatio.StrictOrder.StrictOrder;
 import Tools.PartiallyOrdered;
 
 public class Main {
