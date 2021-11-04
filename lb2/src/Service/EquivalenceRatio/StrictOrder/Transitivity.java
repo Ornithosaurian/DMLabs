@@ -2,7 +2,7 @@ package Service.EquivalenceRatio.StrictOrder;
 
 public class Transitivity implements StrictOrder {
     @Override
-    public boolean doAntiEquivalence(int[][] matrix) {
+    public boolean doStrictEquivalence(int[][] matrix) {
         if (matrix.length == 0 || matrix[0].length == 0 || matrix[0].length != matrix.length) {
             throw new IllegalArgumentException();
         }

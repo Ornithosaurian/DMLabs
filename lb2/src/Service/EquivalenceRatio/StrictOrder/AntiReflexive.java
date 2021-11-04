@@ -2,7 +2,7 @@ package Service.EquivalenceRatio.StrictOrder;
 
 public class AntiReflexive implements StrictOrder {
     @Override
-    public boolean doAntiEquivalence(int[][] matrix) {
+    public boolean doStrictEquivalence(int[][] matrix) {
         if (matrix.length == 0 || matrix[0].length == 0) {
             throw new IllegalArgumentException();
         }
