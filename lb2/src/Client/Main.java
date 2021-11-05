@@ -9,6 +9,8 @@ import Service.Properties.NotStrictOrder.Symmetry;
 import Service.Properties.NotStrictOrder.Transitivity;
 import Service.Properties.StrictOrder.*;
 import Service.Utils.PrintArray;
+import Tools.EquivalentsRatio;
+import Tools.InStrictOrder;
 import Tools.PartiallyOrdered;
 
 public class Main {
@@ -19,6 +21,8 @@ public class Main {
         Compose compose = new Compose();
         PrintArray printArray = new PrintArray();
         ContextClosure contextClosure = new ContextClosure();
+        EquivalentsRatio equivalentsRatio = new EquivalentsRatio();
+        InStrictOrder inStrictOrder = new InStrictOrder();
         int[][] A = {{1, 0, 1, 0, 1}, {1, 0, 1, 1, 0}, {0, 1, 0, 0, 1}, {1, 0, 1, 0, 0}, {1, 0, 0, 0, 0}};
         try {
             contextEquivalenceRatio.setEquivalence(new Reflexive());
@@ -77,8 +81,11 @@ public class Main {
             System.out.println("Exception");
         }
         System.out.println("Відношенням еквівалентності");
+        System.out.println(equivalentsRatio.equivalentsRatio(A));
         System.out.println("Частковим порядком:");
         System.out.println(partiallyOrdered.partiallyOrdered(A));
+        System.out.println("Строгим порядком:");
+        System.out.println(inStrictOrder.inStrictOrder(A));
        /* try {
             System.out.println("2 степінь відношення:\n");
             printArray.printIntArray(compose.square(A));
