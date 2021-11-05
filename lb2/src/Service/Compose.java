@@ -1,4 +1,6 @@
-public class compose {
+package Service;
+
+public class Compose {
 
 //    public static void main(String[] args) {
 //        int[][] check = cube(new int[][]{{1,0,1,1,0},{1,1,0,0,0},{1,1,0,1,1},{1,1,1,0,1},{1,0,0,0,1}});
@@ -11,7 +13,7 @@ public class compose {
 //        }
 //        }
 
-    public static int[][] arrayT(int[][] input){
+    public  int[][] arrayT(int[][] input){
         int[][] output = new int[5][5];
 
         for(int i = 0; i < 5; i++) {
@@ -23,7 +25,7 @@ public class compose {
         return output;
     }
 
-    public static int multeveryelem(int[] inp1,int[] inp2){
+    public  int multeveryelem(int[] inp1,int[] inp2){
         int n = 0;
 
         for (int i = 0; i < 5; i++) {
@@ -36,7 +38,7 @@ public class compose {
     }
 
 
-    public static int[][] square(int[][] input){
+    public  int[][] square(int[][] input){
 
         int[][] transposed = arrayT(input);
         int[][] output = new int[5][5];
@@ -49,7 +51,7 @@ public class compose {
 
         return output;
     }
-    public static int[][] cube(int[][] input){
+    public  int[][] cube(int[][] input){
         int[][] square = square(input);
         int[][] transposed = arrayT(input);
         int[][] output = new int[5][5];
