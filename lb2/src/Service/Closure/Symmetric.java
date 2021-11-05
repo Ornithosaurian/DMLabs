@@ -10,7 +10,7 @@ public class Symmetric implements Closure {
                 A[j][i] = temp;
             }
         }
-        for (int i = 0; i < A.length; i++) { // sym closure
+        for (int i = 0; i < A.length; i++) { // sym  closure
             for (int j = 0; j < A.length; j++) {
                 if (A[i][j] != A[j][i]) {
                     A[i][j] = 1;
