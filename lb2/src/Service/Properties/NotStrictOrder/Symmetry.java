@@ -1,4 +1,4 @@
-package Service.EquivalenceRatio.NotStrictOrder;
+package Service.Properties.NotStrictOrder;
 
 public class Symmetry implements EquivalenceRatio {
     @Override

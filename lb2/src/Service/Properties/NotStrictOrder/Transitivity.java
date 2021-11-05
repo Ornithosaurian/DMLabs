@@ -1,17 +1,17 @@
-package Service.EquivalenceRatio.StrictOrder;
+package Service.Properties.NotStrictOrder;
 
-public class Transitivity implements StrictOrder {
+public class Transitivity implements EquivalenceRatio{
     @Override
-    public boolean doStrictEquivalence(int[][] matrix) {
+    public boolean doEquivalence(int[][] matrix) {
         if (matrix.length == 0 || matrix[0].length == 0 || matrix[0].length != matrix.length) {
             throw new IllegalArgumentException();
         }
-        for (int i = 0; i < matrix.length; i++)
+        for (int[] ints : matrix)
             for (int j = 0; j < matrix.length; j++) {
-                if (matrix[i][j] == 1 || i == j) {
+                if (ints[j] == 1) {
                     for (int k = 0; k < matrix.length; k++) {
-                        if (matrix[j][k] == 1 || j == k) {
-                            if (matrix[i][k] != 1) {
+                        if (matrix[j][k] == 1) {
+                            if (ints[k] != 1) {
                                 return false;
                             }
                         }

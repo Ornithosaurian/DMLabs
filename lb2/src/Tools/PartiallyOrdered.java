@@ -1,9 +1,9 @@
 package Tools;
 
-import Service.EquivalenceRatio.NotStrictOrder.ContextEquivalenceRatio;
-import Service.EquivalenceRatio.NotStrictOrder.Reflexive;
-import Service.EquivalenceRatio.NotStrictOrder.Symmetry;
-import Service.EquivalenceRatio.NotStrictOrder.Transitivity;
+import Service.Properties.NotStrictOrder.ContextEquivalenceRatio;
+import Service.Properties.NotStrictOrder.Reflexive;
+import Service.Properties.NotStrictOrder.Symmetry;
+import Service.Properties.NotStrictOrder.Transitivity;
 
 public class PartiallyOrdered {
     public boolean partiallyOrdered(int[][] matrix){
