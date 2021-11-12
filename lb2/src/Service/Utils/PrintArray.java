@@ -2,7 +2,6 @@ package Service.Utils;
 
 public class PrintArray {
     public void printIntArrayInt(int[] arr) {
-        System.out.println("Масив: ");
         for (int num : arr) {
             System.out.print(num + " ");
         }
@@ -10,7 +9,6 @@ public class PrintArray {
     }
 
     public void printIntArray(int[][] arr){
-        System.out.println("Масив:");
         for(int[] l:arr){
             for(int p:l){
                 System.out.print(p+" ");
@@ -21,7 +19,6 @@ public class PrintArray {
     }
 
     public void printStringArrayArray(String[][] arr) {
-        System.out.println("Масив: \n");
         for (String[] i : arr) {
             for (String j : i) {
                 System.out.print(j + " ");

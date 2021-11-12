@@ -105,21 +105,22 @@ public class Main {
         } catch (NullPointerException | IllegalArgumentException e) {
             System.out.println("Exception");
         }
-        try {
+        /*try {
             contextClosure.setClosure(new Transitive());
             System.out.println("Транзитивне замикання:");
             contextClosure.executeClosure(A);
+            printArray.printIntArray(A);
         } catch (NullPointerException | IllegalArgumentException e) {
             System.out.println("Exception");
-        }
-        try {
+        }*/
+        /*try {
             contextClosure.setClosure(new Symmetric());
             System.out.println("Симетричне замикання:");
             contextClosure.executeClosure(A);
             printArray.printIntArray(A);
         } catch (NullPointerException | IllegalArgumentException e) {
             System.out.println("Exception");
-        }
+        }*/
         try {
             contextClosure.setClosure(new Service.Closure.Reflexive());
             System.out.println("Рефлексивне замикання:");

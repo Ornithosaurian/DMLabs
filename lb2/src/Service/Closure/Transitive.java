@@ -1,4 +1,5 @@
 package Service.Closure;
+
 import java.util.Arrays;
 
 public class Transitive implements Closure {
@@ -19,20 +20,6 @@ public class Transitive implements Closure {
                     trans[i][j] = trans[i][j] == 1 || trans[i][k] == 1 && trans[k][j] == 1 ? 1 : 0;
                 }
             }
-        }
-
-   printClosure(A);
-}
-
-    void printClosure(int[][] trans) {
-        for (int i = 0; i < T; ++i) {
-            for (int j = 0; j < T; j++) {
-                if (i == j)
-                    System.out.print("1 ");
-                else
-                    System.out.print(trans[i][j] + " ");
-            }
-            System.out.println();
         }
     }
 }
