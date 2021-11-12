@@ -1,4 +1,4 @@
-package Service.EquivalenceRatio.StrictOrder;
+package Service.Properties.StrictOrder;
 
 public class ContextStrictOrder {
     StrictOrder strictOrder;

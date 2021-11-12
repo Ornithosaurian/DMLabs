@@ -1,4 +1,4 @@
-package Service.EquivalenceRatio.NotStrictOrder;
+package Service.Properties.NotStrictOrder;
 
 public interface EquivalenceRatio {
     boolean doEquivalence(int[][] matrix);

@@ -1,8 +1,8 @@
-package Service.EquivalenceRatio.StrictOrder;
+package Service.Properties.NotStrictOrder;
 
-public class AntiReflexive implements StrictOrder {
+public class Reflexive implements EquivalenceRatio {
     @Override
-    public boolean doStrictEquivalence(int[][] matrix) {
+    public boolean doEquivalence(int[][] matrix) {
         if (matrix.length == 0 || matrix[0].length == 0) {
             throw new IllegalArgumentException();
         }
@@ -11,13 +11,13 @@ public class AntiReflexive implements StrictOrder {
         int count = 0;
         if (line < pillar) {
             for (int st = 0; st < line; st++) {
-                if (matrix[st][st] == 0) {
+                if (matrix[st][st] == 1) {
                     count++;
                 }
             }
         } else {
             for (int st = 0; st < pillar; st++) {
-                if (matrix[st][st] == 0) {
+                if (matrix[st][st] == 1) {
                     count++;
                 }
             }
