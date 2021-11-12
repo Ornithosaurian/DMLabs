@@ -10,7 +10,7 @@ public class PrintArray {
     }
 
     public void printIntArray(int[][] arr){
-        System.out.println("Масив: \n");
+        System.out.println("Масив:");
         for(int[] l:arr){
             for(int p:l){
                 System.out.print(p+" ");

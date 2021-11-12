@@ -1,19 +1,24 @@
 package Service.Closure;
 
+import java.util.Arrays;
+
 public class Symmetric implements Closure {
     @Override
     public void doClosure(int[][] A) {
-        for (int i = 0; i < A.length; i++) { // transpon
-            for (int j = i + 1; j < A.length; j++) {
-                int temp = A[i][j];
-                A[i][j] = A[j][i];
-                A[j][i] = temp;
+        int newLength = A.length;
+        int[][] symm = Arrays.copyOf(A, newLength);
+        int S = symm.length;
+        for (int i = 0; i < S; i++) { // transpon
+            for (int j = i + 1; j < S; j++) {
+                int temp = symm[i][j];
+                symm[i][j] = symm[j][i];
+                symm[j][i] = temp;
             }
         }
-        for (int i = 0; i < A.length; i++) { // sym  closure
-            for (int j = 0; j < A.length; j++) {
-                if (A[i][j] != A[j][i]) {
-                    A[i][j] = 1;
+        for (int i = 0; i < S; i++) { // sym  closure
+            for (int j = 0; j < S; j++) {
+                if (symm[i][j] != symm[j][i]) {
+                    symm[i][j] = 1;
                 }
             }
         }

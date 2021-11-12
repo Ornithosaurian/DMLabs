@@ -22,7 +22,13 @@ public class Main {
         Compose compose = new Compose();
         PrintArray printArray = new PrintArray();
         ContextClosure contextClosure = new ContextClosure();
-        int[][] A = {{1, 0, 1, 0, 1}, {1, 0, 1, 1, 0}, {0, 1, 0, 0, 1}, {1, 0, 1, 0, 0}, {1, 0, 0, 0, 0}};
+        int[][] A = {
+                {1, 0, 0, 0, 0},
+                {0, 1, 1, 1, 0},
+                {0, 0, 1, 0, 0},
+                {1, 0, 0, 1, 1},
+                {0, 1, 0, 0, 1}
+        };
         try {
             contextEquivalenceRatio.setEquivalence(new Reflexive());
             System.out.println("Рефлективність:");
@@ -103,7 +109,7 @@ public class Main {
         }
         try {
             contextClosure.setClosure(new Symmetric());
-            System.out.println("Симетричне замикання:\n");
+            System.out.println("Симетричне замикання:");
             contextClosure.executeClosure(A);
             printArray.printIntArray(A);
         } catch (NullPointerException | IllegalArgumentException e) {
@@ -111,7 +117,7 @@ public class Main {
         }
         try {
             contextClosure.setClosure(new Transitive());
-            System.out.println("Транзитивне замикання:\n");
+            System.out.println("Транзитивне замикання:");
             contextClosure.executeClosure(A);
             printArray.printIntArray(A);
         } catch (NullPointerException | IllegalArgumentException e) {
