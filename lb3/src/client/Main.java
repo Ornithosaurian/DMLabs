@@ -2,6 +2,9 @@ package client;
 
 import service.*;
 
+import static service.Checks.*;
+
+
 public class Main {
     public static void main(String[] args) {
         Duality duality = new Duality();
@@ -27,5 +30,13 @@ public class Main {
         //ДКНФ
         booleanFunction.printPCNF(x,y,z,F);
         System.out.println();
+        //Константа 0
+        System.out.println(isConst0(F)+"\n");
+        //
+        System.out.println(isConst1(F)+"\n");
+        //
+        System.out.println(isSelfDual(F)+"\n");
+        //
+        System.out.println(isMonotonous(F)+"\n");
     }
 }
