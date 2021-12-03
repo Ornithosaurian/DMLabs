@@ -34,14 +34,19 @@ public class Main {
         //поліномом Жегалкіна
         System.out.println("Поліномом Жегалкіна:"+longZhegalkin(F)+ "\n");
         //константа 0
+        System.out.println("Константа 0:");
         System.out.println(isConst0(F)+"\n");
         //константа 1
+        System.out.println("Константа 1:");
         System.out.println(isConst1(F)+"\n");
         //самодвоїста
+        System.out.println("Самодвоїста:");
         System.out.println(isSelfDual(F)+"\n");
         //монотонна
+        System.out.println("Монотонна:");
         System.out.println(isMonotonous(F)+"\n");
         //лінійна
+        System.out.println("Лінійна:");
         System.out.println(isLinear(F));
     }
 }

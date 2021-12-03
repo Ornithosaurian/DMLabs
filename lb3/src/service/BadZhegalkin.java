@@ -3,9 +3,6 @@ package service;
 import java.util.Objects;
 
 public class BadZhegalkin {
-    public static void main(String[] args) {
-        System.out.println(longZhegalkin(new String[]{"0","0","1","1","0","0","1","1",}));
-    }
 
     public static String[] findPolinom(String[] input) {
         String[] a1 = new String[7];
