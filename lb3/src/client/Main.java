@@ -2,6 +2,7 @@ package client;
 
 import service.*;
 
+import static service.BadZhegalkin.longZhegalkin;
 import static service.Checks.*;
 
 
@@ -30,13 +31,17 @@ public class Main {
         //ДКНФ
         booleanFunction.printPCNF(x,y,z,F);
         System.out.println();
-        //Константа 0
+        //поліномом Жегалкіна
+        System.out.println("Поліномом Жегалкіна:"+longZhegalkin(F)+ "\n");
+        //константа 0
         System.out.println(isConst0(F)+"\n");
-        //
+        //константа 1
         System.out.println(isConst1(F)+"\n");
-        //
+        //самодвоїста
         System.out.println(isSelfDual(F)+"\n");
-        //
+        //монотонна
         System.out.println(isMonotonous(F)+"\n");
+        //лінійна
+        System.out.println(isLinear(F));
     }
 }

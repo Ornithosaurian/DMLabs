@@ -3,12 +3,6 @@ package service;
 import java.util.Objects;
 
 public class Checks {
-    public static void main(String[] args) {
-        System.out.println(isConst0(new String[]{"0","0","1","1","0","0","1","1"}));
-        System.out.println(isConst1(new String[]{"0","0","1","1","0","0","1","1"}));
-        System.out.println(isSelfDual(new String[]{"0","0","1","1","0","0","1","0"}));
-        System.out.println(isMonotonous(new String[]{"0","0","1","1","0","0","1","1"}));
-    }
 
     public static boolean isConst0(String[] input) {
         return Objects.equals(input[0], "0");
@@ -41,11 +35,16 @@ public class Checks {
 
         return true;
     }
-    public static boolean isLinear(int input){
-        if(input > 1){
-            return false;
+    public static boolean isLinear(String[] input) {
+        int count = 0;
+        for (int i = 0; i < 8; i++) {
+            if (Objects.equals(input[i], "1")){
+                count++;
+                if(count > 1){
+                    return false;
+                }
+            }
         }
-
         return true;
     }
 
