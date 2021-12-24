@@ -2,8 +2,7 @@ package Client;
 
 import Service.Closure.ContextClosure;
 import Service.Closure.Symmetric;
-import Service.Closure.Transitive;
-import Service.Compose;
+import Service.Utils.Compose;
 import Service.Properties.NotStrictOrder.ContextEquivalenceRatio;
 import Service.Properties.NotStrictOrder.Reflexive;
 import Service.Properties.NotStrictOrder.Symmetry;
@@ -105,29 +104,29 @@ public class Main {
         } catch (NullPointerException | IllegalArgumentException e) {
             System.out.println("Exception");
         }
-        /*try {
+      /*  try {
             contextClosure.setClosure(new Transitive());
             System.out.println("Транзитивне замикання:");
             contextClosure.executeClosure(A);
             printArray.printIntArray(A);
         } catch (NullPointerException | IllegalArgumentException e) {
             System.out.println("Exception");
-        }*/
-        /*try {
+        }
+        */try {
             contextClosure.setClosure(new Symmetric());
             System.out.println("Симетричне замикання:");
             contextClosure.executeClosure(A);
             printArray.printIntArray(A);
         } catch (NullPointerException | IllegalArgumentException e) {
             System.out.println("Exception");
-        }*/
-        try {
+        }
+       /* try {
             contextClosure.setClosure(new Service.Closure.Reflexive());
             System.out.println("Рефлексивне замикання:");
             contextClosure.executeClosure(A);
             printArray.printIntArray(A);
         } catch (NullPointerException | IllegalArgumentException e) {
             System.out.println("Exception");
-        }
+        }*/
     }
 }
