@@ -1,7 +1,7 @@
 
 package service;
 
-class PostOrder {
+public class PostOrder {
     static class Node {
         String key;
         Node left, right;
@@ -12,22 +12,24 @@ class PostOrder {
         }
     }
 
-    static class BinaryTree {
+     public static class BinaryTree {
         Node root;
 
-        BinaryTree() {
+        public BinaryTree() {
             root = null;
         }
 
         void printPostorder(Node node) {
-            if (node == null)
+            if (node == null) {
                 return;
+            }
             printPostorder(node.left);
             printPostorder(node.right);
             System.out.print(node.key + " ");
         }
 
-        void printPostorder() {
+         public void printPostorder() {
+            System.out.println("Зворотній обхід дерева: ");
             printPostorder(root);
         }
     }
@@ -45,8 +47,6 @@ class PostOrder {
         tree.root.right.right.right = new Node("-");
         tree.root.right.right.right.left = new Node("5");
         tree.root.right.right.right.right = new Node("u");
-
-        System.out.println("Зворотній обхід дерева: ");
         tree.printPostorder();
     }
 }
