@@ -39,11 +39,11 @@ public class Main {
         TreePart Rr4 = new TreePart(4);
         TreePart Rr3l1 = new TreePart(5);
         TreePart Rr2l1 = new TreePart(2);
-        TreePart Rr3 = new TreePart('-',Rr3l1,Rr4);
-        TreePart Rr2 = new TreePart('*',Rr2l1,Rr3);
-        TreePart Rr1 = new TreePart('^',Rr1l1,Rr2);
-        TreePart Rl1 = new TreePart('*',Rl2,Rl1r1);
-        TreePart Rroot = new TreePart('/',Rl1,Rr1);
+        TreePart Rr3 = new TreePart('-', Rr3l1, Rr4);
+        TreePart Rr2 = new TreePart('*', Rr2l1, Rr3);
+        TreePart Rr1 = new TreePart('^', Rr1l1, Rr2);
+        TreePart Rl1 = new TreePart('*', Rl2, Rl1r1);
+        TreePart Rroot = new TreePart('/', Rl1, Rr1);
 
         StringBuilder RIO = ReversalTreeTraversal.reversalTreeTraversal(Rroot);
         System.out.println(RIO);
